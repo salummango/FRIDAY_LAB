@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type=" text" id ="tagInput" placeholder="Enter a self-closing HTML tag">
+    <button onclick="validateTag()">Validate</button>
+    <p id="result"></p>
+    
+</body>
+<script>
+    function validateTag() {
+        const regex = /^<\w+(\s+\w+="[^"]*")*\s*\/?>$/;
+        const inputTag = document.getElementById('tagInput').value;
+
+        if(regex.test(inputTag)) {
+            document.getElementById('result').textContent = 'valid tag';
+        }else {
+            document.getElementById('result').textContent = 'Invalid tag';
+        }
+    }
+
+</script>
+</html>
